@@ -19,6 +19,7 @@
                        http://localhost:8080/onlinshopping/home
                        http://localhost:8080/onlinshopping/index
     -->
-
   </servlet-mapping>
+
+
 </web-app>

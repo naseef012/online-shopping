@@ -7,6 +7,9 @@
   <version>1.0-SNAPSHOT</version>
   <name>onlineshopping Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <build>
+    <finalName>onlineshopping</finalName>
+  </build>
 
   <properties>
     <javaee.version>7.0</javaee.version>
@@ -45,7 +48,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <build>
-    <finalName>onlineshopping</finalName>
-  </build>
+
 </project>
