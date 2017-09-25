@@ -5,7 +5,7 @@
   Time: 1:27 AM
   To change this template use File | Settings | File Templates.
 --%>
-<div class="container">
+<div class="container footer">
 
     <hr>
 
