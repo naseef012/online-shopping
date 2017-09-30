@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="online-shopping:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="onlineshopping.war">
+    <root id="archive" name="onlineshopping-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="online-shopping:war exploded" />
     </root>
   </artifact>

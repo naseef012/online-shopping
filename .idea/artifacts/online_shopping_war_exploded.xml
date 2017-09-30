@@ -1,12 +1,15 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="online-shopping:war exploded">
-    <output-path>$PROJECT_DIR$/target/onlineshopping</output-path>
+    <output-path>$PROJECT_DIR$/target/onlineshopping-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="online-shopping" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="shoppingbackend-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="shoppingbackend" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.10.RELEASE" />
@@ -19,7 +22,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/onlineshopping/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/onlineshopping-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="online-shopping/web/Web" />
     </root>
