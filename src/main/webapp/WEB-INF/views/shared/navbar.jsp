@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: USER
+  User: Naseef M Abdus Sattar
   Date: 9/22/2017
   Time: 1:17 AM
   To change this template use File | Settings | File Templates.
@@ -21,7 +21,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${contextRoot}/home">Start Bootstrap</a>
+            <a class="navbar-brand" href="${contextRoot}/home">Online Shopping</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -30,7 +30,7 @@
                     <a href="${contextRoot}/about">About</a>
                 </li>
                 <li id ="listProducts">
-                    <a href="${contextRoot}/listProducts">List of Products</a>
+                    <a href="${contextRoot}/show/all/products">List of Products</a>
                 </li>
                 <li id="contact">
                     <a href="${contextRoot}/contact">Contact</a>

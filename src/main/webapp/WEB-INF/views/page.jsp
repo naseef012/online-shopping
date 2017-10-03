@@ -48,6 +48,7 @@
         <!-- Navigation -->
         <%@include file="./shared/navbar.jsp"%>
 
+        <!-- For Solving Active Menu Problem -->
         <script>
             window.menu = '${title}';
         </script>
@@ -68,6 +69,11 @@
             <!-- Load only when user clicks Contact -->
             <c:if test="${userClickedContact == true}">
                 <%@include file="contact.jsp"%>
+            </c:if>
+
+            <!-- Load only when user clicks All Products or Category Products -->
+            <c:if test="${userClickedAllProducts == true or userClickedCategoryProducts == true}">
+                <%@include file="listProducts.jsp"%>
             </c:if>
         </div>
 
