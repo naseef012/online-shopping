@@ -1,4 +1,10 @@
-
+<%--
+  Created by IntelliJ IDEA.
+  User: Naseef M Abdus Sattar
+  Date: 09/15/2017
+  Time: 10:10 AM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -7,7 +13,7 @@
 <spring:url var="js" value="/onlineshopping/resources/js"/>
 <spring:url var="images" value="/onlineshopping/resources/images"/>
 
-<c:set var = "contextRoot" value="${pageContext.request.contextPath}"/>
+<c:set var = "contextRoot" value="/onlineshopping"/>
 
 
 
@@ -30,6 +36,9 @@
     <!-- Bootstrap Solar Theme -->
     <link href="${css}/bootstrap-solar-theme.css" rel="stylesheet">
 
+    <!--Bootstrap DataTable CSS -->
+    <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="${css}/myapp.css" rel="stylesheet">
 
@@ -48,13 +57,16 @@
         <!-- Navigation -->
         <%@include file="./shared/navbar.jsp"%>
 
-        <!-- For Solving Active Menu Problem -->
+
         <script>
-            window.menu = '${title}';
+            window.menu = '${title}';<!-- For Solving Active Menu Problem  -->
+            window.contextRoot = '${contextRoot}';
+
         </script>
 
         <!-- Page Content -->
         <div class="content">
+
             <!-- Loading Home Page -->
             <!-- Load only when user clicks home-->
             <c:if test="${userClickedHome == true}">
@@ -75,6 +87,12 @@
             <c:if test="${userClickedAllProducts == true or userClickedCategoryProducts == true}">
                 <%@include file="listProducts.jsp"%>
             </c:if>
+
+            <!-- Load only when user clicks show product -->
+            <c:if test="${userClickedShowProduct == true}">
+                <%@include file="singleProduct.jsp"%>
+            </c:if>
+
         </div>
 
         <!-- Footer Comes Here -->
@@ -86,6 +104,12 @@
 
         <!-- Bootstrap Core JavaScript -->
         <script src="${js}/bootstrap.min.js"></script>
+
+        <!--Data Table Plugin-->
+        <script src="${js}/jquery.dataTables.js"></script>
+
+        <!--DataTable Bootstrap Script-->
+        <script src="${js}/dataTables.bootstrap.js"></script>
 
         <!-- Self Included JS -->
         <script src="${js}/myapp.js"></script>
