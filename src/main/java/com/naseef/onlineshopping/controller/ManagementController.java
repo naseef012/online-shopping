@@ -1,14 +1,14 @@
 package com.naseef.onlineshopping.controller;
 
 import com.naseef.shoppingbackend.dao.CategoryDAO;
+import com.naseef.shoppingbackend.dao.ProductDAO;
 import com.naseef.shoppingbackend.dto.Category;
 import com.naseef.shoppingbackend.dto.Product;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -23,8 +23,13 @@ public class ManagementController
     @Autowired
     private CategoryDAO categoryDAO;
 
+    @Autowired
+    private ProductDAO productDAO;
+
+    private static final Logger logger = LoggerFactory.getLogger(ManagementController.class);
+
     @RequestMapping(value = "/products",method = RequestMethod.GET)
-    public ModelAndView showManageProducts()
+    public ModelAndView showManageProducts(@RequestParam(name="operation",required=false)String operation)
     {
         ModelAndView mv = new ModelAndView("page");
 
@@ -39,7 +44,27 @@ public class ManagementController
         mv.addObject("product",newProduct);
 
 
+        if(operation!=null)
+        {
+            if(operation.equals("product"))
+            {
+                mv.addObject("message","Product Submitted Successfully!");
+            }
+        }
+
         return mv;
+    }
+
+    //Handling Product Submission
+    @RequestMapping(value = "/products",method = RequestMethod.POST)
+    public String handleProductSubmission(@ModelAttribute("product") Product modifiedProduct)
+    {
+        logger.info(modifiedProduct.toString());
+
+        //Create a new Product
+        productDAO.add(modifiedProduct);
+
+        return "redirect:/onlineshopping/manage/products?operation=product";
     }
 
     //Returning Categories for all the request mapping

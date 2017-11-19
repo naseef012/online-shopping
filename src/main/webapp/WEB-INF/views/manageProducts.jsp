@@ -12,6 +12,20 @@
 
     <div class="row">
 
+        <c:if test="${not empty message}">
+
+            <div class="col-xs-12">
+
+                <div class="alert alert-success alert-dismissable">
+
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    ${message}
+                </div>
+
+            </div>
+
+        </c:if>
+
         <div class="col-md-offset-2 col-md-8">
 
             <div class="panel panel-primary">
@@ -25,7 +39,7 @@
                 <div class="panel-body">
 
                     <!--Form Elements-->
-                    <sf:form class="form-horizontal" modelAttribute="product">
+                    <sf:form class="form-horizontal" modelAttribute="product" action="${contextRoot}/manage/products" method="POST">
 
                         <!--Product Form info-->
                         <div class="form-group">
@@ -55,7 +69,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-4" for="unitPrice">Enter Product Unit Price</label>
                             <div class="col-md-8">
-                                <sf:input type="text" path = "unitPrice" id="unitPrice" placeholder="Unit Price in &#2547;" class="form-control"/>
+                                <sf:input type="text" path = "unitPrice" id="unitPrice" placeholder="Unit Price in '&#2547;'" class="form-control"/>
                             </div>
                         </div>
 

@@ -113,3 +113,13 @@ $(function () {
     }
 
 });
+
+//Dismissing the aler after 3 seconds in manageProducts
+
+var $alert = ${'.alert'};
+if ($alert.length)
+{
+    setTimeout(function () {
+        $alert.fadeOut('slow');
+    }, 3000);
+}
