@@ -114,9 +114,9 @@ $(function () {
 
 });
 
-//Dismissing the aler after 3 seconds in manageProducts
+//Dismissing the alert after 3 seconds in manageProducts
 
-var $alert = ${'.alert'};
+var $alert =$('.alert');
 if ($alert.length)
 {
     setTimeout(function () {
