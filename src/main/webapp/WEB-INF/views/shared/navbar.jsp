@@ -26,6 +26,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+
                 <li id="about">
                     <a href="${contextRoot}/about">About</a>
                 </li>
@@ -34,6 +35,9 @@
                 </li>
                 <li id="contact">
                     <a href="${contextRoot}/contact">Contact</a>
+                </li>
+                <li id="manageProducts">
+                    <a href="${contextRoot}/manage/products">Manage Products</a>
                 </li>
             </ul>
         </div>

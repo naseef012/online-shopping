@@ -45,7 +45,7 @@ public class PageController
         logger.debug("Inside PageController index method - DEBUG");
 
         //Passing list of Categories from Category DAO which is in shopping-backend
-        mv.addObject("categories" , categoryDAO.list());
+        mv.addObject("categories" , categoryDAO.getList());
 
         mv.addObject("userClickedHome" , true);
         return mv;
@@ -87,7 +87,7 @@ public class PageController
         mv.addObject("title" , "All Products");
 
         //Passing list of Categories from Category DAO which is in shopping-backend
-        mv.addObject("categories" , categoryDAO.list());
+        mv.addObject("categories" , categoryDAO.getList());
 
         mv.addObject("userClickedAllProducts" , true);
         return mv;
@@ -111,7 +111,7 @@ public class PageController
         mv.addObject("title", category.getName());
 
         //passing the list of products
-        mv.addObject("categories", categoryDAO.list());
+        mv.addObject("categories", categoryDAO.getList());
 
         //passing a single category object
         mv.addObject("category" , category);
